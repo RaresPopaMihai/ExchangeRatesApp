@@ -9,7 +9,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" FontSize="Medium" />
 
-            <Image Source="logo.png"/>
+            <Image Source="logo.png" Scale="0.3" />
             
             <Label Text="Aplicatie realizata de Rares Popa"
                 VerticalOptions="CenterAndExpand" 
