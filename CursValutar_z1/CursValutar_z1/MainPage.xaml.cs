@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CursValutar_z1.Models;
+using CursValutar_z1.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,9 +12,19 @@ namespace CursValutar_z1
 {
     public partial class MainPage : ContentPage
     {
+
+        List<Curs> listaCurs ;
+
         public MainPage()
         {
             InitializeComponent();
+            initializeazaListaCurs();
+            listViewCurs.ItemsSource = listaCurs;
+        }
+
+        void initializeazaListaCurs()
+        {
+            listaCurs = SursaDate.ObtineListaCurs();
         }
 
         private void Setari_Clicked(object sender, EventArgs e)
