@@ -131,8 +131,13 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="eu.png" />
+    <Content Include="gb.png" />
+    <Content Include="hu.png" />
     <Content Include="logo.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="ro.png" />
+    <Content Include="us.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
