@@ -19,17 +19,24 @@ namespace CursValutar_z1
         public ConvertorPage()
         {
             InitializeComponent();
-            List<Curs> listaCurs = SursaDate.ObtineListaCurs();
-            dictCurs["RON"] = new Curs("RON", 1, 1, "2021-06-01");
-            foreach(Curs curs in listaCurs)
+            
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            List<Curs> listaCurs = await SursaDate.ObtineListaCursAsync();
+            Curs ronCurs = new Curs() { Valuta = "RON", Valoare = 1 };
+            dictCurs[ronCurs.Valuta] = ronCurs; 
+            foreach (Curs curs in listaCurs)
             {
                 dictCurs[curs.Valuta] = curs;
             }
 
             pickerValutaDest.ItemsSource = dictCurs.Keys.ToList();
             pickerValutaSursa.ItemsSource = dictCurs.Keys.ToList();
-            pickerValutaDest.SelectedItem = "EUR";
-            pickerValutaSursa.SelectedItem = "RON";
+            pickerValutaDest.SelectedItem = dictCurs.Keys.First();
+            pickerValutaSursa.SelectedItem = dictCurs.Keys.First();
         }
 
         private void ConvertesteButon_Clicked(object sender, EventArgs e)

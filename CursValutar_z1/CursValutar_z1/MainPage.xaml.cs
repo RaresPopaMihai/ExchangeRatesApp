@@ -18,19 +18,23 @@ namespace CursValutar_z1
         public MainPage()
         {
             InitializeComponent();
-            initializeazaListaCurs();
-            listViewCurs.ItemsSource = listaCurs;
+            
+            
         }
 
-        void initializeazaListaCurs()
+        protected override async void OnAppearing()
         {
-            listaCurs = SursaDate.ObtineListaCurs();
+            base.OnAppearing();
+            listaCurs = await SursaDate.ObtineListaCursAsync();
+            listViewCurs.ItemsSource = listaCurs;
         }
 
         private void Setari_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SetariPage());
         }
+
+        
 
     }
 }
