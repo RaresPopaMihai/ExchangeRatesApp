@@ -7,9 +7,9 @@
         <ToolbarItem Text="Setari" Order="Secondary" Clicked="Setari_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <Label Text="Data cursului:" FontSize="Title" Padding="16"/>
+        <Label Text="{Binding Data,StringFormat='Data cursului: {0}'}" FontSize="Title" Padding="16"/>
 
-        <ListView x:Name="listViewCurs">
+        <ListView x:Name="listViewCurs" ItemsSource="{Binding ListaCurs}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

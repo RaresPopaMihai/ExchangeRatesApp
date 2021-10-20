@@ -89,6 +89,11 @@ namespace CursValutar_z1.Models
             return date.ToUniversalTime().Hour < 10 ? date.AddDays(-1) : date;
         }
 
+        public override string ToString()
+        {
+            return Valuta;
+        }
+
 
     }
 

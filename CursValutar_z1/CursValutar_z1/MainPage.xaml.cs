@@ -1,5 +1,6 @@
 ﻿using CursValutar_z1.Models;
 using CursValutar_z1.Services;
+using CursValutar_z1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,21 +13,14 @@ namespace CursValutar_z1
 {
     public partial class MainPage : ContentPage
     {
-
-        List<Curs> listaCurs ;
+        MainViewModel viewModel;
 
         public MainPage()
         {
             InitializeComponent();
+            viewModel = new MainViewModel();
+            BindingContext = viewModel;
             
-            
-        }
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            listaCurs = await SursaDate.ObtineListaCursAsync();
-            listViewCurs.ItemsSource = listaCurs;
         }
 
         private void Setari_Clicked(object sender, EventArgs e)

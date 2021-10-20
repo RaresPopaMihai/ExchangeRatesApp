@@ -41,7 +41,7 @@ namespace CursValutar_z1
                     break;
             }
 
-            chart.Chart = new BarChart() { Entries = dateGrafic };
+            chart.Chart = new DonutChart() { Entries = dateGrafic };
             
         }
     }
