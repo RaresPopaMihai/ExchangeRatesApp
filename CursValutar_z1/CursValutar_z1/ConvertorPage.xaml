@@ -18,13 +18,13 @@
 
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Text="Converteste din" />
-            <Entry x:Name ="entrySuma" Grid.Row="1" Grid.Column="0" Placeholder="Suma de convertit" Keyboard="Numeric" />
-            <Picker x:Name ="pickerValutaSursa" Grid.Row="1" Grid.Column="1" Title="Alege Valuta" />
+            <Entry x:Name ="entrySuma" Keyboard="Numeric" Text="{Binding Suma, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Placeholder="Suma de convertit"  />
+            <Picker x:Name ="pickerValutaSursa" ItemsSource="{Binding ListaCurs}" SelectedItem="{Binding CursSursa}" Grid.Row="1" Grid.Column="1" Title="Alege Valuta" />
             <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="in" />
-            <Label  x:Name="labelRezultat" Grid.Row="3" Grid.Column="0" Text="Rezultat"/>
+            <Label  x:Name="labelRezultat" Text="{Binding Rezultat, Mode=TwoWay}" Grid.Row="3" Grid.Column="0" />
             <!-- rezultatul -->
-            <Picker x:Name ="pickerValutaDest" Grid.Row="3" Grid.Column="1" Title="Alege Valuta" />
-            <Button Grid.Row="4" Grid.Column="0" Text="Converteste" Grid.ColumnSpan="2" BorderColor="#1E00FF" TextColor="#64FF00" BackgroundColor="#1E00FF" Clicked="ConvertesteButon_Clicked" />
+            <Picker x:Name ="pickerValutaDest" ItemsSource="{Binding ListaCurs}" SelectedItem="{Binding CursDest}" Grid.Row="3" Grid.Column="1" Title="Alege Valuta" />
+            <Button Grid.Row="4" Grid.Column="0" Text="Converteste" Grid.ColumnSpan="2" BorderColor="#1E00FF" TextColor="#64FF00" BackgroundColor="#1E00FF" Command="{Binding ConvertesteCommand}" />
 
         </Grid>
     </ContentPage.Content>
